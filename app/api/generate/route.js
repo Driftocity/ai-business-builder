@@ -1,18 +1,11 @@
-export async function POST(req) {
-  const { idea } = await req.json();
+import BusinessForm from "../components/BusinessForm";
 
-  // MOCK AI RESPONSE (NO API KEY NEEDED YET)
-  const response = {
-    name: idea + " Pro Services",
-    tagline: "Fast. Reliable. Professional.",
-    description: `We provide high-quality ${idea} services for residential and commercial clients.`,
-    services: [
-      idea + " basic service",
-      idea + " premium package",
-      "Emergency support",
-      "Monthly maintenance"
-    ]
-  };
-
-  return Response.json(response);
+export default function Page() {
+  return (
+    <main style={{ padding: 20, fontFamily: "Arial" }}>
+      <h1>AI Business Builder</h1>
+      <p>Turn any idea into a ready-to-launch business in seconds.</p>
+      <BusinessForm />
+    </main>
+  );
 }
